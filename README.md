@@ -1,0 +1,2 @@
+# paradigmas
+Trabalho em grupo
