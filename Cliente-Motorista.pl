@@ -33,25 +33,10 @@ cliente(dean, 36, 85).
 cliente(daen, 5, 7).
 cliente(jake, 25, 62).
 
-/* Funcoes */
-minimo(X,Y,Y) :- X >= Y, !.
-minimo(X,Y,X) :- X < Y.
+/* Funcoes *****************************/
 
 distancia(Xa,Ya, Xb, Yb, D) :- D is ((Xb-Xa)**2 + (Yb-Ya)**2)**(1/2).
 
-
-/*
-Generico:
-cliente(Cliente,Y,Z), motorista(Motorista, 1, K, L), distancia(Y,Z,K,L,Distancia).
-
-Cliente fixo:
-cliente(daen,Y,Z), motorista(Motorista, 1, K, L), distancia(Y,Z,K,L,Distancia).
-
-findall(C, (cliente(daen,Y,Z), motorista(Motorista, 1, K, L), distancia(Y,Z,K,L,C)), L), min_list(L,Min), indexOf(L,Min,Indice).
-L = [lista].
-Min = 2.8284271247461903,
-Indice = 3.
-*/
 min_list([H|T], Min) :-
     min_list(T, H, Min).
 
@@ -79,12 +64,8 @@ match([Elem|Tail],Num,Counter,MatchedNumber):-
 encontraeElem(0, [H|_], H):- !.
 encontraeElem(I, [_|T], E):- X is I - 1, encontraeElem(X, T, E).
 
-/*
-A menor distancia
+/*Requisicao no terminal do prolog
 
-findall(C, (cliente(daen,Y,Z), motorista(Motorista, 1, K, L), distancia(Y,Z,K,L,C)), L),
-             min_list(L,Min), 
-             indexOf(L,Min,Indice).
 
 findall(C, (cliente(daen,Y,Z), motorista(C, 1, K, L), distancia(Y,Z,K,L,Distancia)), Mtrs), 
 findall(C, (cliente(daen,Y,Z), motorista(Motorista, 1, K, L), distancia(Y,Z,K,L,C)), L),
