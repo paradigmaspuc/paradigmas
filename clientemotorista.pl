@@ -64,13 +64,11 @@ match([Elem|Tail],Num,Counter,MatchedNumber):-
 encontraeElem(0, [H|_], H):- !.
 encontraeElem(I, [_|T], E):- X is I - 1, encontraeElem(X, T, E).
 
-/*Requisicao no terminal do prolog
-
-
-findall(C, (cliente(daen,Y,Z), motorista(C, 1, K, L), distancia(Y,Z,K,L,Distancia)), Mtrs), 
-findall(C, (cliente(daen,Y,Z), motorista(Motorista, 1, K, L), distancia(Y,Z,K,L,C)), L),
-min_list(L,Min), 
-indexOf(L,Min,Indice),
-encontraeElem(Indice, Mtrs, MotoristaSolicitado).
-
-*/
+find(Cliente) :-
+    findall(C, (cliente(Cliente,Y,Z), motorista(C, 1, K, L), distancia(Y,Z,K,L,Distancia)), Mtrs),
+    findall(C, (cliente(Cliente,Y,Z), motorista(Motorista, 1, K, L), distancia(Y,Z,K,L,C)), L),
+    min_list(L,Min),
+    indexOf(L,Min,Indice),
+    encontraeElem(Indice, Mtrs, MotoristaSolicitado),
+    write(MotoristaSolicitado),nl,
+    write(Min),nl.
