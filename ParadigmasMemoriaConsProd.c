@@ -33,6 +33,7 @@ int main ()
     if((long int)Lista == -1)
     {
         printf("Erro de alocacao! \n");
+        return 0;
     }else
     { 
         
@@ -43,10 +44,13 @@ int main ()
     if((long int)Lista->list  == -1)
     {
         printf("Erro de alocacao! \n");
+        return 0;
     }else
     { 
 
         printf("\nVetor de interiros da lista alocada com Sucesso!\n");
+
+        // Iniciando Estrutura
         Lista->fim = -1;
         Lista->inicio = -1;
         Lista->Tamanho = tamLista;
