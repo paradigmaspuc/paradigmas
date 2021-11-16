@@ -70,8 +70,8 @@ int main ()
             Lista->lock = 1;
             while (Lista->lock)
             {
-                remover(Lista);
                 Lista->lock = 0;
+                remover(Lista);
             }
             
         } while (true--);
@@ -85,8 +85,8 @@ int main ()
             Lista->lock = 1;
             while (Lista->lock)
             {
-                inserir(Lista);
                 Lista->lock = 0;
+                inserir(Lista);
             }
             
         } while (true--);
