@@ -33,7 +33,6 @@ int main ()
         return 0;
     }else
     { 
-        
         printf ("\nEstrutura da lista alocada com Sucesso!\n");
     }
 
@@ -82,7 +81,7 @@ int main ()
                 Lista->lock = 0;
                 inserir(Lista);
             }
-            
+
         } while (true--);
     }
 
