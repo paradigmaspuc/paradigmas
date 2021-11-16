@@ -33,7 +33,7 @@ int main ()
         return 0;
     }else
     { 
-        printf ("\nEstrutura da lista alocada com Sucesso!\n");
+        printf ("\n Estrutura da lista alocada com Sucesso!\n");
     }
 
     Lista->list = mmap(NULL, sizeof(int)*tamLista, protection, visibility, 0, 0);
@@ -43,7 +43,7 @@ int main ()
         return 0;
     }else
     { 
-        printf ("\nVetor de interiros da lista alocada com Sucesso!\n");
+        printf ("\n Vetor de interiros da lista alocada com Sucesso!\n");
 
         // Iniciando Estrutura
         Lista->fim = -1;
@@ -94,7 +94,7 @@ int main ()
 }
 void inserir (struct lista* Lista)
 {// Inserir 1 elemento aleatorio na lista
-    printf ("\nInserir");
+    printf ("\n Inserir");
     if (Lista->fim == -1 && Lista->inicio == -1)
     {
         Lista->inicio = 0;
